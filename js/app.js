@@ -1,6 +1,8 @@
 //modelo de productos
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
+const cuerpoTabla = document.getElementById("cuerpoTabla");
+
 const crearProductos = (e) => {
   e.preventDefault();
 
@@ -25,8 +27,29 @@ const crearProductos = (e) => {
 
   document.getElementById("formulario").reset();
   document.getElementById("nombreProd").focus();
+  cargarTabla();
+};
+
+const cargarTabla = () => {
+  cuerpoTabla.innerHTML = "";
+
+  productos.forEach((producto) => {
+    const fila = document.createElement("tr");
+    const celdas = `<tr>
+     <th scope="row">${producto.id}</th>
+     <td>${producto.nombre}</td>
+     <td>${producto.detalle}</td>
+     <td>${producto.precio}</td>
+    </tr>`;
+
+    fila.innerHTML = celdas;
+
+    cuerpoTabla.append(fila);
+  });
 };
 
 document
   .getElementById("formulario")
   .addEventListener("submit", crearProductos);
+
+cargarTabla();
