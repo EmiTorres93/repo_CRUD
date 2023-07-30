@@ -1,5 +1,5 @@
 //modelo de productos
-const productos = [JSON.parse(localStorage.getItem("productos")) || []];
+const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 const crearProductos = (e) => {
   e.preventDefault();
@@ -19,6 +19,9 @@ const crearProductos = (e) => {
 
   productos.push(item);
   localStorage.setItem("productos", JSON.stringify(productos));
+
+  document.getElementById("formulario").reset();
+  document.getElementById("nombreProd").focus();
 };
 
 document
