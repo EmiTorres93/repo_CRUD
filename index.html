@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUD de JavaScript</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="text-center">Administrador de productos</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+          <!-- formulario de carga de productos -->
+          <form action="">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombreProd"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Detalle</label
+              >
+              <textarea
+                class="form-control"
+                id="detalleProd"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+              <div class="col-8 me-2">
+                <label class="form-label">URL de la imagen</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="imagenProd"
+                  placeholder="Escribir URL de la imagen"
+                />
+              </div>
+              <div class="col">
+                <label class="form-label">Precio</label>
+                <input type="number" class="form-control" id="precioProd" />
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-info">Crear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- tabla de productos -->
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
