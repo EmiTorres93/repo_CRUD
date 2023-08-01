@@ -52,7 +52,13 @@ ${productos[index].detalle}
       </div>
 
       <div class="d-flex justify-content-end">
-        <button class="btn btn-success">Actualizar</button>
+        <button
+          class="btn btn-success"
+          type="button"
+          onclick="actualizarProducto(${index})"
+        >
+          Actualizar
+        </button>
       </div>`;
 
   formularioUpdate.innerHTML = contenidoFormulario;
@@ -98,6 +104,17 @@ const borrarProducto = (index) => {
     localStorage.setItem("productos", JSON.stringify(productos));
     cargarTabla();
   }
+};
+
+const actualizarProducto = (index) => {
+  productos[index].nombre = document.querySelector("#nombreUpdate").value;
+  productos[index].detalle = document.querySelector("#detalleUpdate").value;
+  productos[index].imagen = document.querySelector("#imagenUpdate").value;
+  productos[index].precio = document.querySelector("#precioUpdate").value;
+
+  localStorage.setItem("productos", JSON.stringify(productos));
+  cargarTabla();
+  myModal.hide();
 };
 
 const cargarTabla = () => {
