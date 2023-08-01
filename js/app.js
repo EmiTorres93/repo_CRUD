@@ -5,7 +5,7 @@ const cuerpoTabla = document.getElementById("cuerpoTabla");
 
 const myModal = new bootstrap.Modal(document.getElementById("updateModal"));
 
-const abrirModal = () => {
+const abrirModal = (index) => {
   document.querySelector(".modal-body").innerHTML = " ";
   const formularioUpdate = document.createElement("form");
   const contenidoFormulario =
@@ -15,7 +15,8 @@ const abrirModal = () => {
         <input
           type="text"
           class="form-control"
-          id="nombreProd"
+          id="nombreUpdate"
+          value="${productos[index].nombre}"
           placeholder="Nombre del producto"
         />
       </div>
@@ -23,7 +24,10 @@ const abrirModal = () => {
         <label for="exampleFormControlTextarea1" class="form-label"
           >Detalle</label
         >
-        <textarea class="form-control" id="detalleProd" rows="3"></textarea>
+        <textarea class="form-control" id="detalleUpdate" rows="3">
+${productos[index].detalle}
+        </textarea
+        >
       </div>
       <div class="d-flex justify-content-between mb-4">
         <div class="col-8 me-2">
@@ -31,18 +35,24 @@ const abrirModal = () => {
           <input
             type="text"
             class="form-control"
-            id="imagenProd"
+            id="imagenUpdate"
+            value="${productos[index].imagen}"
             placeholder="Escribir URL de la imagen"
           />
         </div>
         <div class="col">
           <label class="form-label">Precio</label>
-          <input type="number" class="form-control" id="precioProd" />
+          <input
+            type="number"
+            class="form-control"
+            id="precioUpdate"
+            value="${productos[index].precio}"
+          />
         </div>
       </div>
 
       <div class="d-flex justify-content-end">
-        <button class="btn btn-info">Crear</button>
+        <button class="btn btn-success">Actualizar</button>
       </div>`;
 
   formularioUpdate.innerHTML = contenidoFormulario;
@@ -101,13 +111,13 @@ const cargarTabla = () => {
         <th scope="row">${producto.id}</th>
         <td>${producto.nombre}</td>
         <td>${producto.detalle}</td>
-        <td>${producto.precio}</td>
+        <td>$${producto.precio}</td>
         <td>
           <button class="btn btn-danger" onClick="borrarProducto(${index})">
             X
           </button>
         </td>
-        <td><button class="btn btn-warning" onCLick="abrirModal()">Edit&#9998</button></td>
+        <td><button class="btn btn-warning" onCLick="abrirModal(${index})">Edit&#9998</button></td>
       </tr>`;
 
     fila.innerHTML = celdas;
