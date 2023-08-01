@@ -1,4 +1,3 @@
-//modelo de productos
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 const cuerpoTabla = document.getElementById("cuerpoTabla");
