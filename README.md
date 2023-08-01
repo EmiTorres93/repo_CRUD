@@ -7,7 +7,7 @@ Al ser tú el administrador puedes Editar estos valores.
 
 Utilizamos [Boostrap](https://getbootstrap.com/) **v2.9.0** para el diseño del sitio y elementos de **JavaScript** para darle la funcionalidad.
 
-## Repositorio
+## Repositorio 💻
 
 - Para clonar el Repositorio:
 
@@ -17,6 +17,6 @@ git clone https://github.com/EmiTorres93/repo_CRUD
 
 - Para contribuir con el proyecto ponerse en contacto con el sgte. mail: **emi.mtorresbq@gmail.com**
 
-## Autores
+## Autores 📄
 
 1. Emiliana M. Torres [GitHub](https://github.com/EmiTorres93)
