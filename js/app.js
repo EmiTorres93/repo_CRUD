@@ -3,6 +3,12 @@ const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 const cuerpoTabla = document.getElementById("cuerpoTabla");
 
+const myModal = new bootstrap.Modal(document.getElementById("updateModal"));
+
+const abrirModal = () => {
+  myModal.show();
+};
+
 const crearProductos = (e) => {
   e.preventDefault();
 
@@ -47,13 +53,20 @@ const cargarTabla = () => {
 
   productos.forEach((producto, index) => {
     const fila = document.createElement("tr");
-    const celdas = `<tr>
-     <th scope="row">${producto.id}</th>
-     <td>${producto.nombre}</td>
-     <td>${producto.detalle}</td>
-     <td>${producto.precio}</td>
-     <td><button class="btn btn-danger" onClick="borrarProducto(${index})">X</button></td>
-    </tr>`;
+    const celdas =
+      /* HTML */
+      `<tr>
+        <th scope="row">${producto.id}</th>
+        <td>${producto.nombre}</td>
+        <td>${producto.detalle}</td>
+        <td>${producto.precio}</td>
+        <td>
+          <button class="btn btn-danger" onClick="borrarProducto(${index})">
+            X
+          </button>
+        </td>
+        <td><button class="btn btn-warning" onCLick="abrirModal()">Edit&#9998</button></td>
+      </tr>`;
 
     fila.innerHTML = celdas;
 
