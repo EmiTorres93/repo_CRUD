@@ -6,6 +6,48 @@ const cuerpoTabla = document.getElementById("cuerpoTabla");
 const myModal = new bootstrap.Modal(document.getElementById("updateModal"));
 
 const abrirModal = () => {
+  document.querySelector(".modal-body").innerHTML = " ";
+  const formularioUpdate = document.createElement("form");
+  const contenidoFormulario =
+    /* HTML */
+    `<div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombreProd"
+          placeholder="Nombre del producto"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Detalle</label
+        >
+        <textarea class="form-control" id="detalleProd" rows="3"></textarea>
+      </div>
+      <div class="d-flex justify-content-between mb-4">
+        <div class="col-8 me-2">
+          <label class="form-label">URL de la imagen</label>
+          <input
+            type="text"
+            class="form-control"
+            id="imagenProd"
+            placeholder="Escribir URL de la imagen"
+          />
+        </div>
+        <div class="col">
+          <label class="form-label">Precio</label>
+          <input type="number" class="form-control" id="precioProd" />
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-info">Crear</button>
+      </div>`;
+
+  formularioUpdate.innerHTML = contenidoFormulario;
+  document.querySelector(".modal-body").append(formularioUpdate);
+
   myModal.show();
 };
 
